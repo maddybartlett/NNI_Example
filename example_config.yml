@@ -1,0 +1,25 @@
+searchSpace:
+   nodes1:
+      _type: randint
+      _value: [10, 500]
+   nodes2:
+      _type: randint
+      _value: [10, 500]
+   lr:
+      _type: uniform
+      _value: [0, 1]
+   weight_decay:
+      _type: uniform
+      _value: [0, 1]
+      
+experimentName: EXPERIMENT
+trialCommand: python experiment.py
+trialConcurrency: 2
+maxTrialNumber: 5
+maxExperimentDuration: 1h
+tuner:
+   name: Anneal
+   classArgs:
+      optimize_mode: minimize
+trainingService:
+   platform: local
