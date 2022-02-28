@@ -1,4 +1,3 @@
-import nni
 from data_fetch import DividedPlane
 from net import RobustNetwork
 
@@ -13,10 +12,10 @@ def main(args):
         model.learn(train.inputs(), train.targets(), epochs = 100, lr=args['lr'], weight_decay=args['weight_decay'])
         y = model(test.inputs())
         test_loss = model.loss_fcn(y, test.targets())
-        test_loss = float(test_loss.detach().numpy())
-        nni.report_intermediate_result(test_loss)
-    nni.report_final_result(test_loss)
+        test_loss = test_loss.item()
+        print(test_loss)
+    print(test_loss)
 
 if __name__ == '__main__':
-    params = nni.get_next_parameter()
+    params = {'nodes1': 20, 'nodes2': 30, 'lr': 0.001, 'weight_decay': 0.5}
     main(params)
