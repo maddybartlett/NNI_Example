@@ -17,6 +17,6 @@ A trial script has been written in experiment_trial.py and there is an empty YAM
 
 Create an NNI experiment by following these steps:
 1.	Edit the trial script so that the hyperparameters are fetched from NNI, and the results are reported to NNI
-2.	In the YAML file, define your search space and configure your experiment. Hint: copy and paste the examples from the NNI website and edit them to suit your experiment.
+2.	In the YAML file, define your search space and configure your experiment. 
 3.	Run your experiment from the command line (you might need to do this from an Anaconda Prompt) with the command: nnictl create --config config.yml
 
